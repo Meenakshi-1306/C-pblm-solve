@@ -1,0 +1,331 @@
+End semester preparation
+
+
+1.RECURSIVE SUM
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int sum_of_digit(long long int n)
+{
+    int sum=0,rem;
+    if (n == 0)
+       return 0;
+    else 
+    {
+       
+       rem=n%10;
+       sum=rem+sum_of_digit(n/10);
+      
+    }
+    if(sum>9)
+    {
+        n=sum;
+        sum=sum_of_digit(n);
+    }
+    if(sum>0)
+    return sum;
+    
+}
+ 
+int main()
+{
+    int r;
+    char s[10000],t[10000];
+    scanf("%s",s);
+    long long int k;
+    scanf("%lld",&k);
+    for(int i=1;i<=k;i++)
+    {
+        strcat(t,s);
+    }
+    //printf("%s",t);
+    long long int no=atoll(t);
+    printf("%lld\nans:",no);
+    int res=sum_of_digit(no);
+    printf("%d",res);
+    
+}
+
+
+
+
+
+2.CHARACTERS REPEATING
+    
+    
+    
+
+#include <stdio.h>
+#include<string.h>
+
+int main()
+{
+    char s[100000];
+    scanf("%s",s);
+    //printf("%c",s[1]);
+    for(int i=0;i<strlen(s);i++)
+    {
+        
+        for(int j=1;j<=s[i+1]-48;j++)
+        {
+           // printf("j:%c, j:%d\n",s[i+1],j);
+            if(s[i]<'0' || s[i]>'9')
+            {
+                printf("%c",s[i]);
+                
+            }
+            
+           //printf("%d",i);
+        }
+    }
+    
+    
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+3.PERFECT NUMBER
+
+
+#include<stdio.h>
+int main()
+{
+    int n,j=0,sum=0;
+    scanf("%d",&n);
+    int arr[n];
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0)
+            arr[j++]=i;
+    }
+    for(int i=0;i<j-1;i++)
+    {
+       // printf("%d ",arr[i]);
+        sum+=arr[i];
+    }
+    printf("%d",sum);
+    if(sum==n)
+    printf("S");
+    else
+    printf("N");
+}
+
+
+
+
+
+
+
+4.N PERFECT SQUARES
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int n,c=0;
+    scanf("%d",&n);
+    for(int n1=0;c<=n;n1++)
+    {
+    for(int i=2;i<=n1;i++)
+    {
+        if(n1==i*i){
+            c++;
+            printf("%d\n",n1);
+            break;}
+    }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+5.TRANSPOSE OF A MATRIX
+
+
+
+#include <stdio.h>
+int main() {
+  int a[10][10], transpose[10][10], r, c;
+  printf("Enter rows and columns: ");
+  scanf("%d %d", &r, &c);
+
+  // asssigning elements to the matrix
+  printf("\nEnter matrix elements:\n");
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    printf("Enter element a%d%d: ", i + 1, j + 1);
+    scanf("%d", &a[i][j]);}
+    
+    
+    for(int i=0;i<r;i++){
+    for(int j=0;j<c;j++){
+    transpose[j][i]=a[i][j];
+        
+    }
+    
+    printf("\n");}
+    
+    
+    for (int i = 0; i < c; ++i){
+  for (int j = 0; j < r; ++j) {
+    printf("%d",transpose[i][j]);
+      
+  }
+  printf("\n");}
+    
+    return 0;
+  }
+`
+
+
+
+
+
+
+
+
+5.NO. OF WORDS IN C
+
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    int c=0;
+    char ch[1000];
+    gets(ch);
+    for(int i=0;ch[i]!='\0';i++)
+    {
+        if(ch[i]==' '||ch[i]=='\n'||ch[i]=='\t')
+            c+=1;
+    }
+    printf("%d",c+1);
+    return 0;
+}
+
+
+
+
+
+
+
+6.REPLACE THE GIVEN CH AT THE GIVEN INDEX
+
+
+
+
+
+#include<string.h>
+int main()
+{
+    char ch[100];
+    char c,d,temp;
+    int cnt=0,i;
+    fgets(ch,100,stdin);
+    scanf("%c\n",&c);
+    scanf("%c",&d);
+    for(i=0;ch[i]!='\0';i++)
+    {
+        if(ch[i]==c){
+        
+       // printf("%d",i);
+        break;}
+    }
+    
+   // printf("%d",cnt);
+    temp=ch[i];
+   // printf("%c",temp);
+    ch[i]=d;
+    d=temp;
+    printf("%s",ch);
+        
+    
+    
+}
+
+
+7.NUMBER PALINDROME
+
+#include<stdio.h>
+ int main()
+ {
+    int n,rem,rev;
+    scanf("%d",&n);
+    int cmp=n;
+    for(int i=1;n!=0;i++)
+    {
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+    printf("%d",rev);
+    if(rev==cmp)
+    printf("S");
+    else
+    printf("N");
+ }
+
+
+
+8.SUM OF EVEN AND ODD DIGITS IN A NUMBER
+
+
+#include<stdio.h>
+ int main()
+ {
+    int n,rem,rev,se=0,so=0;
+    scanf("%d",&n);
+    int cmp=n;
+    for(int i=1;n!=0;i++)
+    {
+        rem=n%10;
+        if(rem%2==0)
+            se+=rem;
+        else
+            so+=rem;
+        n=n/10;
+    }
+    printf("%d %d",se,so);
+    
+ }
+
+
+A).SUM OF EVEN AND ODD POSITIONED DIGITS IN A NUMBER
+
+
+#include<stdio.h>
+ int main()
+ {
+    int n,rem,rev,se=0,so=0;
+    scanf("%d",&n);
+    int cmp=n;
+    for(int i=1;n!=0;i++)
+    {
+        rem=n%10;
+        if(i%2!=0)
+            se+=rem;
+        else
+            so+=rem;
+        n=n/10;
+    }
+    printf("%d %d",se,so);
+    printf("%d",se-so);
+    
+ }

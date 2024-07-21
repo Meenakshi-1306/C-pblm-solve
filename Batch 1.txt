@@ -1,0 +1,776 @@
+
+
+
+1.No of negative elements in 2D array
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,c=0,m;
+    scanf("%d %d",&n,&m);
+    int arr[10][10];
+    for(i=0;i<n;i++)
+    {
+         for(j=0;j<m;j++){
+        scanf("%d",&arr[i][j]);
+        if(arr[i][j]<0){
+            c+=1;}}
+    }
+    printf("%d",c);
+    return 0;
+}
+
+
+***********************************************************
+
+
+2.Coloumn adding
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,c[100],c1=0,m,k,l;
+    scanf("%d %d",&n,&m);
+    int arr[10][10];
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            scanf("%d",&arr[i][j]);
+           
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        c[i]=0;
+     printf("\nc before loop:%d",c[i]);
+         for(j=0;j<m;j++){
+        
+        printf("\ni:%d j:%d element:%d",i,j,arr[i][j]);
+            c[i]+=arr[j][i];
+            printf("\nc in loop:%d",c[i]);
+        
+           
+        }}
+        for(i=0;i<n;i++)
+        {
+            printf("\nrow %d:%d",i,c[i]);
+        }
+        
+       
+    
+   
+    return 0;
+}
+
+
+
+
+**************************************************************8
+
+
+
+3.Row adding
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,c[100],c1=0,m,k,l;
+    scanf("%d %d",&n,&m);
+    int arr[10][10];
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            scanf("%d",&arr[i][j]);
+           
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        c[i]=0;
+     printf("\nc before loop:%d",c[i]);
+         for(j=0;j<m;j++){
+        
+        printf("\ni:%d j:%d element:%d",i,j,arr[i][j]);
+            c[i]+=arr[i][j];
+            printf("\nc in loop:%d",c[i]);
+        
+           
+        }}
+        for(i=0;i<n;i++)
+        {
+            printf("\nrow %d:%d",i,c[i]);
+        }
+        
+       
+    
+   
+    return 0;
+}
+
+
+
+
+
+
+***************************************************************
+
+
+4.Sum even holders add
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,c=0,m;
+    scanf("%d %d",&n,&m);
+    int arr[10][10];
+    for(i=0;i<n;i++)
+    {
+         for(j=0;j<m;j++){
+        scanf("%d",&arr[i][j]);
+        if((i+j)%2==0){
+            c+=arr[i][j];}}
+    }
+    printf("%d",c);
+    return 0;
+}
+
+
+
+
+****************************************************************
+
+
+5.tunnel que
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,c=0,m,resg=0,resb;
+    scanf("%d",&n);
+    int arr[10][10];
+    for(i=0;i<n;i++)
+    {
+         for(j=0;j<3;j++)
+         {
+             
+                scanf("%d",&arr[i][j]);
+                
+                 
+             
+         }
+        
+         
+    }
+    for(i=0;i<n;i++)
+    {
+         
+             if(arr[i][2]<41)
+          
+         printf("%d",arr[i][0]*arr[i][1]*arr[i][2]);
+             
+         
+          printf("\n");
+    }
+   
+    return 0;
+}
+
+
+
+
+MAJOR TAKE AWAY=========>>>>>>>ASSSIGN ANY VALUE AS 2D AND THEN PROCEED.....NO OF TEST CASE=NO OF ROWS
+
+
+
+
+***********************************************
+
+
+6.Santha mam sum
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,c=0,m,resg=0,resb;
+    scanf("%d",&n);
+    int arr[10][10];
+    for(i=0;i<n;i++)
+    {
+         for(j=0;j<2;j++)
+         {
+             
+                scanf("%d",&arr[i][j]);
+                
+                 
+             
+         }
+        
+         
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i][0]==1)
+        {
+            if(resb<arr[i][1])
+            {
+             resb=arr[i][1];   
+            }
+        }
+        else if(arr[i][0]==0)
+        {
+            if(resg<arr[i][1])
+            {
+             resg=arr[i][1];   
+            }
+        }
+             
+          
+        
+    }
+    printf("%d %d",resb,resg);
+   
+    return 0;
+}
+
+
+
+
+7.Diagonal question
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,c=0,c1=0,m;
+    scanf("%d %d",&n,&m);
+    int arr[10][10];
+    for(i=1;i<=n;i++)
+    {
+         for(j=1;j<=m;j++){
+        scanf("%d",&arr[i][j]);
+        if(i==j){
+            c+=arr[i][j];}
+        
+        else if(i+j==n-1)
+        {
+        printf("%d",arr[i][j]);
+        c1+=arr[i][j];
+         }}
+    }
+    printf("%d",c1);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+**********************************************************************************
+
+8.Linear search
+
+
+
+#include<stdio.h>
+int main()
+{
+    int arr[5]={1,2,3,3,5};
+    int i,k=3;
+    for(i=0;i<=4;i++)
+    {
+        if(arr[i]==k)
+        printf("%d YES",i);
+    }
+    
+}
+
+
+
+
+
+
+**************************************************************************************
+
+
+
+
+9.Binary search
+
+
+#include<stdio.h>
+int main()
+{
+    int n,i,k,f=0;
+    printf("Array size:");
+    scanf("%d",&n);
+    printf("Key element:");
+    scanf("%d",&k);
+     int l=0,r=n-1,mid;
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+   
+    while(l<=r)
+    {
+        mid=(r+l)/2;
+        if(arr[mid]==k)
+        {
+           
+          f=1;
+          i=mid;
+          break;
+            
+        }
+        else if(arr[mid]>k)
+        
+            r=mid-1;
+        
+        else if(arr[mid]<k)
+        
+            l=mid+1;
+        
+    }
+    if(f)
+    {
+        printf("Hi %d",i+1);
+    }
+    else
+    printf("Not found");
+    
+    return 0;
+}
+
+
+
+
+******************************************************************************************
+
+
+
+
+
+
+
+10.Binary search for unsorted array
+
+
+#include<stdio.h>
+int main()
+{
+    int i,n,k,t;
+    printf("Array size:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("\nArray elements");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+  
+   
+
+
+for (i=0; i<n-1;i++)
+{
+for (int j=0;j<n-1-i;j++)
+{
+if (arr[j]>arr[j+1])
+{
+t = arr[j];
+arr[j] = arr[j+1];
+arr[j+1] = t;
+}
+}
+}
+for(i=0;i<n;i++)
+{
+    printf("%d",arr[i]);
+}
+
+    
+    
+    int mid,l=0,r=n-1;
+    printf("\nKey:");
+    scanf("%d",&k);
+    
+    while(l<=r)
+    {
+        mid=(l+r)/2;
+        if(arr[mid]==k)
+        {
+            printf("Hi");
+            break;
+            
+        }
+        if(arr[mid]<k)
+        {
+            l=mid+1;
+        }
+        if(arr[mid]>k)
+        {
+            r=mid-1;
+        }
+    }
+}
+
+
+
+
+
+*********************************************************************************
+
+
+
+
+10.Bubble sort for sorted + unsorted array
+
+
+
+#include<stdio.h>
+int main()
+{
+    int i,j,n,temp;
+    printf("Array size:");
+    scanf("%d",&n);
+    printf("Array element:");
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d",arr[i]);
+    }
+}
+
+
+
+
+
+
+
+
+
+**********************************************************************************************8
+
+
+
+
+
+
+
+
+11.Peak element question
+
+
+#include<stdio.h>
+int main()
+{
+    int i,j,k,n,max,jm;
+    printf("Array size:");
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]<a[j])
+            {
+                max=a[j];
+                jm=j;
+            }
+        }
+    }
+    printf("Maximum:%d",jm+1);
+    
+}
+
+
+
+
+
+
+***************************************************************************************8
+
+
+
+
+12.Contain duplicate???
+
+
+#include<stdio.h>
+int main()
+{
+    int n,i,j,f=0;
+   
+    printf("Array size:");
+     scanf("%d",&n);
+     printf("Array elements:");
+     int arr[n];
+     for(i=0;i<n;i++)
+     {
+        scanf("%d",&arr[i]); 
+     }
+     for(i=0;i<n;i++)
+     {
+         for(j=i+1;j<n;j++)
+         {
+             if(arr[i]==arr[j])
+             {
+                f=1; 
+             }
+         }
+     }
+     if(f)
+     printf("yes");
+    
+}
+
+
+
+
+******************************************************************************************
+
+
+
+13.Print unique numbers and no. of duplicate elements
+
+
+
+#include<stdio.h>
+int main()
+{
+    int n,i,j,f=0,c=0,cr=0;
+   
+    printf("Array size:");
+     scanf("%d",&n);
+     printf("Array elements:");
+     int arr[n];
+     for(i=0;i<n;i++)
+     {
+        scanf("%d",&arr[i]); 
+     }
+     for(i=0;i<n;i++)
+     {
+         c=0;
+         for(j=0;j<n;j++)
+         {
+             if(arr[i]==arr[j]&&j!=i)
+             {
+                c+=1;
+                
+                
+             }
+             
+             
+         }
+         printf("\nc:%d i:%d j:%d",c,arr[i],arr[j]);
+         if(c==0)
+         {
+             printf("%d",arr[i]);
+         }
+         else{
+             cr+=c;
+         }
+         
+             
+         
+    
+    
+     }
+     printf("c:%d",cr);
+     
+     
+    
+}
+
+
+
+*******************************************************************************
+
+14.merge and sort
+
+
+#include<stdio.h>
+int main()
+{
+    int a[3]={1,3,3},b[2]={4,5},temp;
+    int i,j ,n=3+2;
+    int c[n];
+    for(i=0;i<n;i++)
+{
+    c[i]=a[i];
+}
+for(i=0;i<n;i++)
+{
+    c[i]=b[i];
+}
+
+for(j=0;j<n;j++)
+{
+    printf("%d ",c[j]);
+}
+for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            if(c[j]>c[j+1])
+            {
+                temp=c[j];
+                c[j]=c[j+1];
+                c[j+1]=temp;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d",c[i]);
+    }
+    
+}
+
+
+*********************************************************************************************
+
+
+15.Merged sort
+
+
+
+#include<stdio.h>
+int main()
+{
+    int n1,n2;
+    printf("Array1 size:");
+    
+    scanf("%d",&n1);
+    
+    int i,j ,a[n1],b[n2];
+    
+     for(i=0;i<n1;i++)
+{
+    scanf("%d",&a[i]);
+}
+printf("Array2 size:");
+    
+    scanf("%d",&n2);
+for(i=0;i<n2;i++)
+{
+    scanf("%d",&b[i]);
+}
+int n=n1+n2;
+int c[n],temp;
+    for(i=0;i<n1;i++)
+{
+    c[i]=a[i];
+}
+for(i=0;i<n2;i++)
+{
+    c[n1+i]=b[i];
+}
+
+for(i=0;i<n;i++)
+{
+    printf("%d ",c[i]);
+}
+for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            if(c[j]>c[j+1])
+            {
+                temp=c[j];
+                c[j]=c[j+1];
+                c[j+1]=temp;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("\nSorted:%d",c[i]);
+    }
+    
+    
+    
+
+
+
+**************************************************************************************************************
+
+
+
+16.nature of positions addition
+
+
+
+#include<stdio.h>
+int main()
+{
+    int n,i,ce=0,co=0;
+    printf("Array size:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Array elements:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(i%2==0)
+        {
+            ce+=arr[i];
+        }b
+        else
+        {
+            co+=arr[i];
+        }
+    }
+    printf("%d",ce);
+    printf("%d",co);
+}
+
+
+
+
+
+
+
+completed successfully and hence marks will be updated   29/30.....output didn"t write

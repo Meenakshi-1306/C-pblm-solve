@@ -1,0 +1,313 @@
+MAHALAKSHMI'S COLLECTION
+
+
+
+1.MERGE WITHOUT DUPS
+#include<stdio.h>
+int main()
+{
+    int arr1[] = {1, 2, 3, 4, 5};
+    int arr2[] = {3, 4, 5, 6, 7};
+    int size1 = sizeof(arr1) / sizeof(arr1[0]);
+    int size2 = sizeof(arr2) / sizeof(arr2[0]);
+    int ms=0,ans[size1+size2];
+    for(int i=0;i<size1;i++)
+    {
+        ans[ms++]=arr1[i];
+        
+    }
+    for(int i=0;i<size1;i++)
+    {
+       // ans[ms++]=arr1[i++];
+       // printf("%d",ans[i]);
+    }
+    for(int j=0;j<size2;j++)
+    {
+        int dup=0;
+        for(int k=0;k<size2;k++)
+        {
+            if(arr1[k]==arr2[j])
+            {
+                dup=1;
+                break;
+            }
+        }
+        if(!dup)
+        ans[ms++]=arr2[j];
+    }
+    
+    for(int i=0;i<ms;i++)
+    {
+       // ans[ms++]=arr1[i++];
+        printf("%d",ans[i]);
+    }
+    
+
+}
+
+
+
+
+
+2.REVERSE PRINTING.
+
+manager
+e
+ganam
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char c[1000];
+    scanf("%s\n",c);
+    char ch,temp;
+    scanf("%c",&ch);
+    int index;
+    int n=strlen(c)-1;
+    
+    for(int i=0;i<strlen(c);i++)
+    {
+        if(c[i]==ch)
+        {
+            index =i;
+          //  printf("index:%d",i);
+        }
+    }
+    //printf("%dine:",index);
+    for(int i=index-1;i>=0;i--)
+    {
+        printf("%c",c[i]);
+        if(c[i]==ch)
+            break;
+        
+    }
+}
+
+
+
+reverse from underscore
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char c[1000];
+    scanf("%s",c);
+    char ch,temp;
+    //scanf("%c",&ch);
+    int index;
+    int n=strlen(c)-1;
+    
+    for(int i=0;i<strlen(c);i++)
+    {
+        if(c[i]=='_')
+        {
+            index =i;
+            //break;
+          //  printf("index:%d",i);
+        }
+    }
+    printf("%dine:",index);
+    for(int i=index-1;i>=0;i--)
+    {
+        printf("%c",c[i]);
+        
+        
+    }
+}
+
+
+
+
+3.CHARACTERS REPEATING
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    scanf ("%s",str);
+    int i,j,x=strlen(str);
+    for (i=0;i<x;i+=2)
+    {
+        
+    
+        for (j=0;j<str[i+1]-'0';j++)
+        {
+           printf("%c",str[i]);
+        }
+    }
+}
+
+
+4.NOT DIVISIBLE
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   int a,b,n;
+   scanf("%d %d",&a,&b);
+   scanf("%d",&n);
+   for(int i=a;i<=b;i++)
+   {
+       if(i%n!=0)
+        printf("%d",i);
+   }
+}
+
+
+
+5.sum of digits
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int n,sum=0,i,rem;
+    scanf("%d",&n);
+    for(i=1;n!=0;i++)
+    {
+        rem=n%10;
+        sum=sum+rem;
+        n=n/10;
+        
+    }
+    printf("%d",sum);
+    
+}
+
+
+
+
+
+6.CORNERS ADDING
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int a[100][100];
+    int n,rl=0,ld=0,r,c;
+    scanf("%d",&r);
+    scanf("%d",&c);
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+           scanf("%d",&a[i][j]);
+        }
+    }
+    
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+           rl=a[0][0] + a[0][c - 1]+ a[r - 1][0] + a[r - 1][c - 1];
+        }
+    }
+    printf("sum:%d",rl);
+    
+    
+}
+
+
+
+
+7.Diagonal question
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n,c=0,c1=0,m;
+    scanf("%d %d",&n,&m);
+    int arr[10][10];
+    for(i=1;i<=n;i++)
+    {
+         for(j=1;j<=m;j++){
+        scanf("%d",&arr[i][j]);
+        if(i==j){
+            c+=arr[i][j];}
+        
+        else if(i+j==n-1)
+        {
+        printf("%d",arr[i][j]);
+        c1+=arr[i][j];
+         }}
+    }
+    printf("%d",c1);
+    return 0;
+}
+
+
+8.EVEN ODD
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int a,b,n;
+   scanf("%d %d",&a,&b);
+   //scanf("%d",&n);
+   for(int i=a;i<=b;i++)
+   {
+       if(i%2!=0)
+        printf("%d ",i);
+   }
+   printf("\n");
+   for(int i=b;i>=a;i--)
+   {
+       if(i%2==0)
+        printf("%d ",i);
+   }
+    
+}
+
+
+
+9.next immediate prime number
+
+
+#include<stdio.h>
+int prime(int x)
+{
+   int c=0;
+   for(int i=1;i<=x;i++)
+   {
+       if(x%i==0)
+       c+=1;
+       
+   }
+   if(c==2)
+   return 1;
+   else 
+   return 0;
+    
+}
+int main()
+{
+   int n,res,i,c=0;
+   scanf("%d",&n);
+   for( i=1;c<=n;i++)
+   {
+      
+    res=prime(i);
+   
+   if(res){
+   printf("%d S\n",i);
+   c++;}
+   //printf("c:%d\n",c);
+   //else
+   //printf("No");
+   }
+   printf("final:%d",i-1);
+    
+}
+
+

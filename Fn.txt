@@ -1,0 +1,244 @@
+Functions
+
+
+
+1.ADD
+
+
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    scanf("%d %d",&a,&b);
+    int res=add(a,b);
+    printf("%d",res);
+}
+int add(int x,int y)
+{
+    printf("%d",x+y);
+    return(x+y);
+}
+
+
+
+
+2.FLOAT SQUARE
+
+
+#include<stdio.h>
+float sqr(float x)
+{
+   // printf("%f",x*x);
+    return(x*x);
+}
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    float res=sqr(a);
+    printf("%.2f",res);
+}
+
+
+
+
+
+3.SWAP
+
+
+#include<stdio.h>
+int swap(int x,int y)
+{
+    int temp=x;
+    x=y;
+    y=temp;
+    printf("%d %d",x,y);
+}
+int main()
+{
+    int a,b;
+    scanf("%d %d",&a,&b);
+    //float res=sqr(a);
+    printf("%d %d\n",a,b);
+    swap(a,b);
+}
+
+
+
+
+
+4.ODD EVEN
+
+
+
+#include<stdio.h>
+int oddeve(int x)
+{
+    if(x%2==0)
+    return 0;
+    else
+    return 1;
+}
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    int res=oddeve(a);
+    if(res)
+    printf("ODD");
+    else
+    printf("EVEN");
+    
+}
+
+
+
+
+5.SERIES PRINTING
+
+
+
+
+#include<stdio.h>
+int fact(int x)
+{
+    int f=1;
+    for(int i=1;i<=x;i++)
+    {
+     f=f*i;
+     //printf("%d",i);
+    }
+        return f;
+    
+}
+int main()
+{
+   int sum;//=fact(1)/1+fact(2)/2+fact(3)/3+fact(4)/4+fact(5)/5;
+   for(int i=1;i<=5;i++)
+   {
+       sum+=fact(i)/i;
+   }
+   printf("%d",sum);
+    
+    
+}
+
+
+
+
+
+6.PRIME 
+
+A).PRIME OR NOT
+
+#include<stdio.h>
+int prime(int x)
+{
+   int c=0;
+   for(int i=1;i<=x;i++)
+   {
+       if(x%i==0)
+       c+=1;
+       
+   }
+   if(c==2)
+   return 1;
+   else 
+   return 0;
+    
+}
+int main()
+{
+   int n;
+   scanf("%d",&n);
+   int res=prime(n);
+   if(res)
+   printf("S");
+   else
+   printf("No");
+    
+}
+
+
+
+B).PRIME NO FOR A GIVEN RANGE
+
+
+
+#include<stdio.h>
+int prime(int x)
+{
+   int c=0;
+   for(int i=1;i<=x;i++)
+   {
+       if(x%i==0)
+       c+=1;
+       
+   }
+   if(c==2)
+   return 1;
+   else 
+   return 0;
+    
+}
+int main()
+{
+   int n,res,i;
+   scanf("%d",&n);
+   for( i=1;i<=n;i++)
+   {
+    res=prime(i);
+   
+   if(res)
+   printf("%d S\n",i);
+   //else
+   //printf("No");
+   }
+    
+}
+
+C).Nth PRIME NUMBER
+
+
+
+#include<stdio.h>
+int prime(int x)
+{
+   int c=0;
+   for(int i=1;i<=x;i++)
+   {
+       if(x%i==0)
+       c+=1;
+       
+   }
+   if(c==2)
+   return 1;
+   else 
+   return 0;
+    
+}
+int main()
+{
+   int n,res,i,c=1;
+   scanf("%d",&n);
+   for( i=1;c<=n;i++)
+   {
+      
+    res=prime(i);
+   
+   if(res){
+   //printf("%d S\n",i);
+   c++;}
+   //printf("c:%d\n",c);
+   //else
+   //printf("No");
+   }
+   printf("final:%d",i-1);
+    
+}
+
+
+
+
+
+
